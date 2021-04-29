@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "rocket-booster-template",
+  "version": "1.0.0",
+  "description": "🚀 The template to kickstart rocket-booster workers.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix src/* --ext .js"
+  },
+  "author": "Xiaoyang Liu <siujoeng.lau@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
