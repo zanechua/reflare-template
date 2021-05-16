@@ -1,33 +1,32 @@
 import RocketBooster from 'rocket-booster';
 
 const config = {
-  basic: {
-    upstream: 'https://en.wikipedia.org/',
-    mobileRedirect: 'https://en.m.wikipedia.org/',
-  },
-
-  firewall: {
-    blockedRegion: ['CN', 'KP', 'SY', 'PK', 'CU'],
-    blockedIPAddress: [],
-    scrapeShield: true,
-  },
-
-  routes: {
-    TW: 'https://zh.wikipedia.org/',
-    HK: 'https://zh.wikipedia.org/',
-    FR: 'https://fr.wikipedia.org/',
+  upstream: {
+    domain: 'en.wikipedia.org',
+    protocol: 'https',
   },
 
   optimization: {
-    cacheEverything: false,
-    cacheTtl: 5,
     mirage: true,
-    polish: 'off',
     minify: {
       javascript: true,
       css: true,
       html: true,
     },
+  },
+
+  firewall: [
+    {
+      field: 'country',
+      operator: 'in',
+      value: ['CN', 'KP', 'SY', 'PK', 'CU'],
+    },
+  ],
+
+  cors: {
+    origins: '*',
+    allowHeaders: '*',
+    methods: ['GET', 'POST'],
   },
 };
 
