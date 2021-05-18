@@ -14,5 +14,8 @@
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1"
+  },
+  "dependencies": {
+    "rocket-booster": "^1.0.0"
   }
 }

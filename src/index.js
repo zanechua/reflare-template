@@ -2,7 +2,7 @@ import RocketBooster from 'rocket-booster';
 
 const config = {
   upstream: {
-    domain: 'en.wikipedia.org',
+    domain: 'httpbin.org',
     protocol: 'https',
   },
 
