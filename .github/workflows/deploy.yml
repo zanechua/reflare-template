@@ -1,4 +1,4 @@
-name: Build
+name: Deploy to Cloudflare Workers
 
 on:
   push:
@@ -12,10 +12,10 @@ jobs:
     name: Build and Deploy
     steps:
       - uses: actions/checkout@v2
-      - name: Install Dependencies
+      - name: Setup Node.js 16
         uses: actions/setup-node@v1
         with:
-          node-version: "15.x"
+          node-version: "16"
 
       - name: Cache dependencies
         uses: actions/cache@v2
