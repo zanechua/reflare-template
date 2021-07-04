@@ -1,4 +1,4 @@
-name = "template"
+name = 'template'
 type = 'webpack'
 account_id = ''
 route = ''

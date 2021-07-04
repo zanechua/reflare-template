@@ -1,10 +1,6 @@
 ![Header](https://raw.githubusercontent.com/booster-labs/rocket-booster/master/.github/img/header.png)
 
-:rocket: The template to kickstart rocket-booster workers.
-
-`src/index.js` is the content of the Workers script.
-
-Documentation and examples for `rocket-booster` can be found [here](https://github.com/booster-labs/rocket-booster).
+:rocket: The template to kickstart rocket-booster workers. The `src/index.js` file contains the code and configuration of the template. Documentation and examples for `rocket-booster` can be found [here](https://github.com/booster-labs/rocket-booster).
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/booster-labs/rocket-booster-template)
 

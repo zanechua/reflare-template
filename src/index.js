@@ -1,18 +1,9 @@
-import RocketBooster from 'rocket-booster';
+import useProxy from 'rocket-booster';
 
 const config = {
   upstream: {
     domain: 'httpbin.org',
     protocol: 'https',
-  },
-
-  optimization: {
-    mirage: true,
-    minify: {
-      javascript: true,
-      css: true,
-      html: true,
-    },
   },
 
   firewall: [
@@ -25,13 +16,31 @@ const config = {
 
   cors: {
     origin: true,
-    allowedHeaders: '*',
     methods: ['GET', 'POST'],
+    allowedHeaders: '*',
+  },
+
+  security: {
+    forwarded: true,
+    hidePoweredBy: true,
+    ieNoOpen: true,
+    xssFilter: true,
+    noSniff: true,
+    setCookie: true,
+  },
+
+  optimization: {
+    mirage: true,
+    minify: {
+      javascript: true,
+      css: true,
+      html: true,
+    },
   },
 };
 
 addEventListener('fetch', (event) => {
-  const booster = new RocketBooster(config);
-  const response = booster.apply(event.request);
+  const proxy = useProxy(config);
+  const response = proxy.apply(event.request);
   event.respondWith(response);
 });
