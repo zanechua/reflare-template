@@ -1,18 +1,10 @@
 module.exports = {
   env: {
-    worker: true,
+    node: true,
     es2021: true,
   },
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.ts'],
-      },
-    },
-  },
   extends: [
-    'airbnb-base',
-    'plugin:@typescript-eslint/eslint-recommended',
+    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
   ],
   parser: '@typescript-eslint/parser',
