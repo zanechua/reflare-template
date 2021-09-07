@@ -8,12 +8,6 @@ addEventListener('fetch', (event) => {
       protocol: 'https',
     },
 
-    rewrite: {
-      path: {
-        '/method/get': '/get',
-      },
-    },
-
     firewall: [
       {
         field: 'country',

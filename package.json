@@ -22,6 +22,6 @@
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
-    "rocket-booster": "^1.3.0"
+    "rocket-booster": "^1.4.1"
   }
 }
