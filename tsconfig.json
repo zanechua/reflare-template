@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "module": "esnext",
-    "target": "esnext",
-    "lib": ["esnext", "webworker"],
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "target": "ESNext",
+    "lib": [
+      "ESNext"
+    ],
+    "moduleResolution": "Node",
     "allowJs": false,
     "alwaysStrict": true,
     "strict": true,
