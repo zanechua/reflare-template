@@ -1,8 +1,8 @@
-![Header](https://raw.githubusercontent.com/booster-labs/rocket-booster/master/.github/img/header.jpg)
+![Header](https://raw.githubusercontent.com/xiaoyang-sde/rocket-booster/master/.github/img/header.jpg)
 
-:rocket: The template to kickstart rocket-booster workers. The `src/index.js` file contains the code and configuration of the template. Documentation and examples for `rocket-booster` can be found [here](https://github.com/booster-labs/rocket-booster).
+:rocket: The template to kickstart rocket-booster workers. The `src/index.js` file contains the code and configuration of the template. Documentation and examples for `rocket-booster` can be found [here](https://github.com/xiaoyang-sde/rocket-booster).
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/booster-labs/rocket-booster-template)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/xiaoyang-sde/rocket-booster-template)
 
 ## Build and Deploy
 
@@ -12,10 +12,10 @@
 npm install -g @cloudflare/wrangler
 ```
 
-- Generate from [rocket-booster-template](https://github.com/booster-labs/rocket-booster-template)
+- Generate from [rocket-booster-template](https://github.com/xiaoyang-sde/rocket-booster-template)
 
 ```sh
-wrangler generate booster https://github.com/booster-labs/rocket-booster-template
+wrangler generate booster https://github.com/xiaoyang-sde/rocket-booster-template
 ```
 
 - Install dependencies
