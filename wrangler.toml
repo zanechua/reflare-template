@@ -1,10 +1,9 @@
 name = 'template'
-type = 'webpack'
+type = 'javascript'
 account_id = ''
-route = ''
-zone_id = ''
 usage_model = ''
 workers_dev = true
+compatibility_date = "2022-02-09"
 
 [build]
 command = "npm install && npm run build"

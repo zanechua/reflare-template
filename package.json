@@ -3,7 +3,7 @@
   "name": "rocket-booster-template",
   "version": "1.0.0",
   "description": "🚀 The template to kickstart rocket-booster workers.",
-  "main": "src/index.ts",
+  "main": "dist/worker.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix src/* --ext .ts",
