@@ -1,42 +1,68 @@
-![Header](https://raw.githubusercontent.com/xiaoyang-sde/rocket-booster/master/.github/img/header.jpg)
+![Header](https://raw.githubusercontent.com/xiaoyang-sde/reflare/master/.github/img/header.jpg)
 
-:rocket: The template to kickstart rocket-booster workers. The `src/index.js` file contains the code and configuration of the template. Documentation and examples for `rocket-booster` can be found [here](https://github.com/xiaoyang-sde/rocket-booster).
+:rocket: The template to deploy Reflare to [Cloudflare Workers](https://developers.cloudflare.com/workers/). The `reflare.config.ts` file contains the route configuration of Reflare. The documentation of Reflare can be found [here](https://github.com/xiaoyang-sde/reflare).
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/xiaoyang-sde/rocket-booster-template)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/xiaoyang-sde/reflare-template)
 
-## Build and Deploy
+## Installation
 
-- [Install Wrangler CLI](https://github.com/cloudflare/wrangler#installation)
+[Install `wrangler` CLI](https://github.com/cloudflare/wrangler#installation) and authorize `wrangler` with Cloudflare account.
 
-```sh
+```console
 npm install -g @cloudflare/wrangler
+wrangler login
 ```
 
-- Generate from [rocket-booster-template](https://github.com/xiaoyang-sde/rocket-booster-template)
+Generate a new project from [reflare-template](https://github.com/xiaoyang-sde/reflare-template) and install the dependencies.
 
-```sh
-wrangler generate booster https://github.com/xiaoyang-sde/rocket-booster-template
-```
-
-- Install dependencies
-
-```sh
-cd booster
+```console
+wrangler generate reflare-app https://github.com/xiaoyang-sde/reflare-template
+cd reflare-app
 npm install
 ```
 
-- Authenticate Wrangler with a Cloudflare API Token
+## Development
 
-```sh
-wrangler login
-wrangler config
+Edit the `routeQueue` in `reflare.config.ts`. The `routeQueue` is a list of route configuration of Reflare. Please read [the documentation of Reflare](https://github.com/xiaoyang-sde/reflare) for more details.
+
+```ts
+export const routeQueue: RouteQueue = [
+  {
+    pattern: '/get',
+    upstream: {
+      domain: 'httpbin.org',
+      protocol: 'https',
+    },
+    methods: ['GET'],
+  },
+  {
+    pattern: '/*',
+    upstream: {
+      domain: 'example.com',
+      protocol: 'https',
+    },
+  },
+];
 ```
 
-- Edit the configuration object in `src/index.js`
+Persist the configuration and start the development server.
 
-- Build and publish to Cloudflare Workers
+```console
+npm run persist dev
+npm run dev
+```
 
-```sh
-wrangler build
-wrangler publish
+## Deployment
+
+Create a `REFLARE` KV namespace.
+
+```console
+wrangler kv:namespace create "REFLARE"
+```
+
+Persist the configuration and publish Reflare to Cloudflare Workers.
+
+```console
+npm run persist
+npm run deploy
 ```
