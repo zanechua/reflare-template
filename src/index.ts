@@ -1,22 +1,18 @@
-import useProxy from 'rocket-booster';
+import useReflare from 'reflare';
+
+declare const REFLARE: KVNamespace;
+
+const handleRequest = async (
+  request: Request,
+): Promise<Response> => {
+  const reflare = await useReflare({
+    kv: {
+      namespace: REFLARE,
+    },
+  });
+  return reflare.handle(request);
+}
 
 addEventListener('fetch', (event) => {
-  const proxy = useProxy();
-  proxy.use('/', {
-    upstream: {
-      domain: 'httpbin.org',
-      protocol: 'https',
-    },
-
-    firewall: [
-      {
-        field: 'country',
-        operator: 'in',
-        value: ['CN', 'KP', 'SY', 'PK', 'CU'],
-      },
-    ],
-  });
-
-  const response = proxy.apply(event.request);
-  event.respondWith(response);
+  event.respondWith(handleRequest(event.request));
 });

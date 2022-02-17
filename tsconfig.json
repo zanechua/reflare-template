@@ -1,4 +1,11 @@
 {
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   "compilerOptions": {
     "outDir": "./dist",
     "module": "ESNext",
@@ -22,9 +29,14 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "types": [
-      "@cloudflare/workers-types",
+      "@cloudflare/workers-types"
     ]
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "src",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
